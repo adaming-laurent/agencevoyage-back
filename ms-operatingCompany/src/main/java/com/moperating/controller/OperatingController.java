@@ -22,38 +22,38 @@ import com.moperating.service.interfaces.IOperatingService;
 
 @RestController
 @CrossOrigin
-public class OperatingCompanyController {
+public class OperatingController {
 	@Autowired
-	IOperatingService ioperatingCompanyService;
+	IOperatingService ioperatingService;
 	
 	@Autowired
 	IOperatingMapper operatingMapper;
 	
 	@GetMapping("/operatings")
 	public List<OperatingDTO> findAll() {
-		return (List<OperatingDTO>) ioperatingCompanyService.findAll().stream().map(o->operatingMapper.convertToOperatingDTO(o)).collect(Collectors.toList());
+		return (List<OperatingDTO>) ioperatingService.findAll().stream().map(o->operatingMapper.convertToOperatingDTO(o)).collect(Collectors.toList());
 	}
 	
 	@GetMapping("/operatings/{idOperating}")
 	public Operating findOne(@PathParam("idOperating") Long id) {
-		return ioperatingCompanyService.findOne(id);
+		return ioperatingService.findOne(id);
 	}
 	
 	@PostMapping("/operatings")
 	public OperatingDTO save(@RequestBody Operating operating) {
-		return operatingMapper.convertToOperatingDTO(ioperatingCompanyService.save(operating));
+		return operatingMapper.convertToOperatingDTO(ioperatingService.save(operating));
 	}
 
 	@DeleteMapping("/operatings/{idOperating}")
 	public void delete(@PathParam("idOperating") Long id) {
-		ioperatingCompanyService.delete(id);
+		ioperatingService.delete(id);
 	}
 	
 	@PutMapping("/operatings/{id}")
 	public OperatingDTO updateOperating(@PathVariable("id") Long id, @RequestBody Operating operating) {
-		Operating currentOperating = ioperatingCompanyService.findOne(id);
+		Operating currentOperating = ioperatingService.findOne(id);
 		currentOperating.setOperatingCompanyName(operating.getOperatingCompanyName());
 		currentOperating.setOperatingCompanyDetails(operating.getOperatingCompanyDetails());
-		return operatingMapper.convertToOperatingDTO(ioperatingCompanyService.save(currentOperating));
+		return operatingMapper.convertToOperatingDTO(ioperatingService.save(currentOperating));
 	}
 }
