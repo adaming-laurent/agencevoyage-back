@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 @Entity
 public class Flight extends Journey {
 	
+	private static final long serialVersionUID = 1L;
+	
 	private Long idFlight;
 	private String flightNumber;
 
@@ -29,7 +31,10 @@ public class Flight extends Journey {
 	public void setFlightNumber(String flightNumber) {
 		this.flightNumber = flightNumber;
 	}
-
 	
+	@Override
+	public String toString() {
+		return "Flight [idFlight=" + idFlight + ", flightNumber=" + flightNumber + "]";
+	}
 
 }

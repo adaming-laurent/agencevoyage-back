@@ -14,8 +14,6 @@ public class RiverCruiseBean {
 		this.nameOfTheBoat = nameOfTheBoat;
 		this.portOfRegistration = portOfRegistration;
 	}
-
-	
 	
 	public Long getIdRiverCruise() {
 		return idRiverCruise;
@@ -39,5 +37,11 @@ public class RiverCruiseBean {
 
 	public void setPortOfRegistration(String portOfRegistration) {
 		this.portOfRegistration = portOfRegistration;
+	}
+	
+	@Override
+	public String toString() {
+		return "RiverCruise [idRiverCruise=" + idRiverCruise + ", nameOfTheBoat=" + nameOfTheBoat
+				+ ", portOfRegistration=" + portOfRegistration + "]";
 	}
 }

@@ -2,6 +2,7 @@ package com.agencevoyage.entities;
 
 public class RiverCruise extends Journey{
 	
+	private static final long serialVersionUID = 1L;
 	private Long idRiverCruise;
 	private String nameOfTheBoat;
 	private String portOfRegistration;
@@ -14,8 +15,6 @@ public class RiverCruise extends Journey{
 		this.nameOfTheBoat = nameOfTheBoat;
 		this.portOfRegistration = portOfRegistration;
 	}
-
-	
 	
 	public Long getIdRiverCruise() {
 		return idRiverCruise;
@@ -41,4 +40,10 @@ public class RiverCruise extends Journey{
 		this.portOfRegistration = portOfRegistration;
 	}
 
+	@Override
+	public String toString() {
+		return "RiverCruise [idRiverCruise=" + idRiverCruise + ", nameOfTheBoat=" + nameOfTheBoat
+				+ ", portOfRegistration=" + portOfRegistration + "]";
+	}
+	
 }

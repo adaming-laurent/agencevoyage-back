@@ -2,6 +2,7 @@ package com.agencevoyage.entities;
 
 public class TrainRide extends Journey{
 	
+	private static final long serialVersionUID = 1L;
 	private Long idTrainRide;
 	
 	public TrainRide(){}
@@ -18,6 +19,10 @@ public class TrainRide extends Journey{
 	public void setIdTrainRide(Long idTrainRide) {
 		this.idTrainRide = idTrainRide;
 	}
-	
 
+	@Override
+	public String toString() {
+		return "TrainRide [idTrainRide=" + idTrainRide + "]";
+	}
+	
 }

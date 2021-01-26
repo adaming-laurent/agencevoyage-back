@@ -10,7 +10,6 @@ public class JourneyBean {
 	private String endDateAndTime;
 	private String otherDetails;
 	
-	
 	public JourneyBean() {}
 	
 	public JourneyBean(Long idJourney, String originLocationCode, String destinationLocationCode,
@@ -78,5 +77,13 @@ public class JourneyBean {
 
 	public void setOtherDetails(String otherDetails) {
 		this.otherDetails = otherDetails;
+	}
+	
+	@Override
+	public String toString() {
+		return "Journey [idJourney=" + idJourney + ", originLocationCode=" + originLocationCode
+				+ ", destinationLocationCode=" + destinationLocationCode + ", operatingCompanyid=" + operatingCompanyid
+				+ ", startDateAndTime=" + startDateAndTime + ", endDateAndTime=" + endDateAndTime + ", otherDetails="
+				+ otherDetails + "]";
 	}
 }

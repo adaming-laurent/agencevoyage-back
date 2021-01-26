@@ -6,6 +6,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
+<<<<<<< HEAD
 		<version>2.3.6.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
@@ -30,6 +31,22 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 		<dependency>
+=======
+		<version>2.3.5.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.agencevoyage</groupId>
+	<artifactId>MS-Customer</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>MS-Customer</name>
+	<description>Demo project for Spring Boot</description>
+	<properties>
+		<java.version>1.8</java.version>
+		<spring-cloud.version>HOXTON.SR8</spring-cloud.version>
+	</properties>
+	<dependencies>
+		<dependency>
+>>>>>>> 7d380f847524cbe299c6e9bd017a43ea876dc044
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
@@ -37,6 +54,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+<<<<<<< HEAD
 
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -55,12 +73,23 @@
 			<groupId>org.modelmapper</groupId>
 			<artifactId>modelmapper</artifactId>
 			<version>2.3.8</version>
+=======
+ 		<dependency> 
+			<groupId>org.springframework.cloud</groupId>
+ 			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+ 		</dependency>
+		<dependency>
+			<groupId>org.modelmapper</groupId>
+			<artifactId>modelmapper</artifactId>
+			<version>2.3.0</version>
+>>>>>>> 7d380f847524cbe299c6e9bd017a43ea876dc044
 		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+<<<<<<< HEAD
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
@@ -73,10 +102,19 @@
 		</dependency>
 
 		<!-- exclude junit4 -->
+=======
+
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+>>>>>>> 7d380f847524cbe299c6e9bd017a43ea876dc044
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+<<<<<<< HEAD
 			<exclusions>
 				<exclusion>
 					<groupId>org.junit.vintage</groupId>
@@ -97,6 +135,10 @@
 
 	</dependencies>
 
+=======
+		</dependency>
+	</dependencies>
+>>>>>>> 7d380f847524cbe299c6e9bd017a43ea876dc044
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -118,4 +160,8 @@
 		</plugins>
 	</build>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7d380f847524cbe299c6e9bd017a43ea876dc044
 </project>
