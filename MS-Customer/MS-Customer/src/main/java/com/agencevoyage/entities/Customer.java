@@ -26,6 +26,7 @@ public class Customer implements Serializable {
 	private LocalDate DateBecomeCustomer;
 	private String Email;
 	private Integer PhoneNumber;
+	
 
 	public Long getCustomerId() {
 		return CustomerId;
