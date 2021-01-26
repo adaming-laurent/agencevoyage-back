@@ -5,14 +5,17 @@ public class OperatingDTO {
 	private Long operatingCompanyId;
 	private String operatingCompanyName;
 	private String operatingCompanyDetails;
+	
 	public OperatingDTO() {
 		super();
 	}
+	
 	public OperatingDTO(String operatingCompanyName, String operatingCompanyDetails) {
 		super();
 		this.operatingCompanyName = operatingCompanyName;
 		this.operatingCompanyDetails = operatingCompanyDetails;
 	}
+	
 	public Long getOperatingCompanyId() {
 		return operatingCompanyId;
 	}
