@@ -14,6 +14,7 @@ public class Location implements Serializable{
 	private Long idLocation;
 	private String locationCode;
 	private String locationName;
+	private LocationType locationType;
 	
 //	@OneToMany(mappedBy = "location")
 //	private List<Journey> journey=new ArrayList<>();
@@ -55,10 +56,19 @@ public class Location implements Serializable{
 //		this.journey = journey;
 //}
 	
-	@Override
-	public String toString() {
-		return "Location [locationCode=" + locationCode + ", locationName=" + locationName + "]";
+	public LocationType getLocationType() {
+		return locationType;
 	}
 	
+	public void setLocationType(LocationType locationType) {
+		this.locationType = locationType;
+	}
+	
+	public Location(String locationCode, String locationName, LocationType locationType) {
+		super();
+		this.locationCode = locationCode;
+		this.locationName = locationName;
+		this.locationType = locationType;
+	}
 
 }
