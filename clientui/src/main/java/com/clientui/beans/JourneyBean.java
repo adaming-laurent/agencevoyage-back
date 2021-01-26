@@ -1,4 +1,4 @@
-package com.agencevoyage.beans;
+package com.clientui.beans;
 
 public class JourneyBean {
 
