@@ -9,5 +9,4 @@ public interface ILocationService {
 	Location findOne(Long id);
 	Location save(Location location);
 	void delete(Long id);
-
 }

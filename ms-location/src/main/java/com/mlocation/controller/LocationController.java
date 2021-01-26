@@ -27,21 +27,21 @@ public class LocationController {
 	ILocationService ilocationService;
 	
 	@Autowired
-	ILocationMapper locationMapper;
+	ILocationMapper ilocationMapper;
 	
 	@GetMapping("/locations")
 	public List<LocationDTO> findAll() {
-		return (List<LocationDTO>) ilocationService.findAll().stream().map(o->locationMapper.convertToLocationDTO(o)).collect(Collectors.toList());
+		return (List<LocationDTO>) ilocationService.findAll().stream().map(o->ilocationMapper.convertToLocationDTO(o)).collect(Collectors.toList());
 	}
 	
 	@GetMapping("/locations/{idLocation}")
-	public Location findOne(@PathParam("idLocation") Long id) {
-		return ilocationService.findOne(id);
+	public LocationDTO findOne(@PathParam("idLocation") Long id) {
+		return ilocationMapper.convertToLocationDTO(ilocationService.findOne(id));
 	}
 	
 	@PostMapping("/locations")
 	public LocationDTO save(@RequestBody Location location) {
-		return locationMapper.convertToLocationDTO(ilocationService.save(location));
+		return ilocationMapper.convertToLocationDTO(ilocationService.save(location));
 	}
 
 	@DeleteMapping("/locations/{idLocation}")
@@ -54,7 +54,7 @@ public class LocationController {
 		Location currentLocation = ilocationService.findOne(id);
 		currentLocation.setLocationCode(location.getLocationCode());
 		currentLocation.setLocationName(location.getLocationName());
-		return locationMapper.convertToLocationDTO(ilocationService.save(currentLocation));
+		return ilocationMapper.convertToLocationDTO(ilocationService.save(currentLocation));
 	}
 
 }

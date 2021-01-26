@@ -1,18 +1,20 @@
-package com.mlocation.DTO;
+package com.clientui.beans;
 
-public class LocationDTO {
-
+public class LocationBean {
+	
 	private Long idLocation;
 	private String locationCode;
 	private String locationName;
+	private LocationType locationType;
 	
-	public LocationDTO() {}
 	
-	public LocationDTO( Long idLocation, String locationCode, String locationName) {
+	public LocationBean() {}
+	
+	public LocationBean(String locationCode, String locationName, LocationType locationType) {
 		super();
-		this.idLocation = idLocation;
 		this.locationCode = locationCode;
 		this.locationName = locationName;
+		this.locationType = locationType;
 	}
 
 	public Long getIdLocation() {
@@ -37,8 +39,18 @@ public class LocationDTO {
 		this.locationName = locationName;
 	}
 	
+	public LocationType getLocationType() {
+		return locationType;
+	}
+	
+	public void setLocationType(LocationType locationType) {
+		this.locationType = locationType;
+	}
+	
 	@Override
 	public String toString() {
-		return "Location [locationCode=" + locationCode + ", locationName=" + locationName + "]";
+		return "Location [idLocation=" + idLocation + ", locationCode=" + locationCode + ", locationName="
+				+ locationName + ", locationType=" + locationType + "]";
 	}
+
 }

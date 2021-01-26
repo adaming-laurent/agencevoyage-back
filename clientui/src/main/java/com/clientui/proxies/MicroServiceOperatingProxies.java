@@ -12,21 +12,21 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.clientui.beans.OperatingBean;
 
-@FeignClient(name = "microservice-operating", url = "localhost:9093/")
+@FeignClient(name = "microservice-operating", url = "localhost:9121/")
 public interface MicroServiceOperatingProxies {
 	
-	@GetMapping(value="/operating")
+	@GetMapping(value="/operatings")
 	List<OperatingBean> findAllOperating();
 	
-	@GetMapping(value="/operating/{id}")
+	@GetMapping(value="/operatings/{id}")
 	public OperatingBean findOneOperating(@PathVariable("id") Long id);
 	
-	@PostMapping(value="/operating")
+	@PostMapping(value="/operatings")
 	public OperatingBean saveOperating(@RequestBody OperatingBean operating);
 	
-	@PutMapping(value="/operating/{id}")
+	@PutMapping(value="/operatings/{id}")
 	public OperatingBean updateOperating(@PathVariable("id") Long id, @RequestBody OperatingBean operating);
 	
-	@DeleteMapping(value = "/operating/{id}")
+	@DeleteMapping(value = "/operatings/{id}")
 	void deleteOperating(@PathVariable("id") Long id);
 }
