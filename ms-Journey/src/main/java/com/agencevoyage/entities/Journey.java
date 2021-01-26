@@ -3,7 +3,7 @@ package com.agencevoyage.entities;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+//import javax.persistence.ManyToOne;
 
 @Entity
 public class Journey implements Serializable{
@@ -88,5 +88,12 @@ public class Journey implements Serializable{
 		this.otherDetails = otherDetails;
 	}
 
-	
+	@Override
+	public String toString() {
+		return "Journey [idJourney=" + idJourney + ", originLocationCode=" + originLocationCode
+				+ ", destinationLocationCode=" + destinationLocationCode + ", operatingCompanyid=" + operatingCompanyid
+				+ ", startDateAndTime=" + startDateAndTime + ", endDateAndTime=" + endDateAndTime + ", otherDetails="
+				+ otherDetails + "]";
+	}
+
 }

@@ -6,6 +6,7 @@ public class FlightBean {
 	private String flightNumber;
 
 	public FlightBean() {}
+	
 	public FlightBean(Long idFlight, String flightNumber) {
 		super();
 		this.idFlight = idFlight;
@@ -26,4 +27,10 @@ public class FlightBean {
 	public void setFlightNumber(String flightNumber) {
 		this.flightNumber = flightNumber;
 	}
+	
+	@Override
+	public String toString() {
+		return "Flight [idFlight=" + idFlight + ", flightNumber=" + flightNumber + "]";
+	}
+	
 }

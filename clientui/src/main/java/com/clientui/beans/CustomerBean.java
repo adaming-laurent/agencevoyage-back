@@ -10,6 +10,18 @@ public class CustomerBean {
 	private String Email;
 	private Integer PhoneNumber;
 
+	public CustomerBean() {
+	}
+	
+	public CustomerBean(Long customerId, String customerName, LocalDate dateBecomeCustomer, String email,
+			Integer phoneNumber) {
+		CustomerId = customerId;
+		CustomerName = customerName;
+		DateBecomeCustomer = dateBecomeCustomer;
+		Email = email;
+		PhoneNumber = phoneNumber;
+	}
+
 	public Long getCustomerId() {
 		return CustomerId;
 	}
@@ -48,18 +60,6 @@ public class CustomerBean {
 
 	public void setPhoneNumber(Integer phoneNumber) {
 		PhoneNumber = phoneNumber;
-	}
-
-	public CustomerBean(Long customerId, String customerName, LocalDate dateBecomeCustomer, String email,
-			Integer phoneNumber) {
-		CustomerId = customerId;
-		CustomerName = customerName;
-		DateBecomeCustomer = dateBecomeCustomer;
-		Email = email;
-		PhoneNumber = phoneNumber;
-	}
-
-	public CustomerBean() {
 	}
 
 	@Override
