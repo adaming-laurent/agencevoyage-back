@@ -1,5 +1,8 @@
 package com.agencevoyage.entities;
 
+import javax.persistence.Entity;
+
+@Entity
 public class TrainRide extends Journey{
 	
 	private static final long serialVersionUID = 1L;
