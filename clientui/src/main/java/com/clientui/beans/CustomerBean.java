@@ -62,7 +62,6 @@ public class CustomerBean {
 		PhoneNumber = phoneNumber;
 	}
 
-
 	@Override
 	public String toString() {
 		return "CustomerBean [CustomerId=" + CustomerId + ", CustomerName=" + CustomerName + ", DateBecomeCustomer="

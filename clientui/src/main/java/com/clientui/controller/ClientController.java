@@ -17,24 +17,31 @@ import org.springframework.web.bind.annotation.RestController;
 import com.clientui.beans.CustomerBean;
 import com.clientui.beans.FlightBean;
 import com.clientui.beans.JourneyBean;
+import com.clientui.beans.LocationBean;
 import com.clientui.beans.OperatingBean;
 import com.clientui.beans.RiverCruiseBean;
 import com.clientui.beans.TrainRideBean;
 import com.clientui.proxies.MicroServiceCustomerProxies;
 import com.clientui.proxies.MicroServiceJourneyProxies;
+import com.clientui.proxies.MicroServiceLocationProxies;
 import com.clientui.proxies.MicroServiceOperatingProxies;
 
 @RestController
 @CrossOrigin
 public class ClientController {
-	@Autowired
-	private MicroServiceOperatingProxies msOperatingProxies;
-
+	
 	@Autowired
 	private MicroServiceJourneyProxies msJourneyProxies;
 	
 	@Autowired
+	private MicroServiceOperatingProxies msOperatingProxies;
+
+	@Autowired
+	private MicroServiceLocationProxies msLocationProxies;
+	
+	@Autowired
 	private MicroServiceCustomerProxies msCustomerProxies;
+	
 
 	
 	//JourneyController
@@ -123,7 +130,7 @@ public class ClientController {
 	//OperatingController
 	
 	@GetMapping("/operatings")
-	public List<OperatingBean> findAll() {
+	public List<OperatingBean> findAllOperationg() {
 		return msOperatingProxies.findAllOperating();
 	}
 	
@@ -145,6 +152,33 @@ public class ClientController {
 	@PutMapping(value = "/operatings/{oId}")
 	public OperatingBean updateOperating(@PathVariable(value = "id") Long id, @RequestBody OperatingBean operating) {
 		return msOperatingProxies.updateOperating(id, operating);
+	}
+	
+	//LocationController
+	
+	@GetMapping("/locations")
+	public List<LocationBean> findAllLocation() {
+		return msLocationProxies.findAllLocation();
+	}
+	
+	@GetMapping("/locations/{idLocation}")
+	public LocationBean findOneLocation(@PathParam("idLocation") Long id) {
+		return msLocationProxies.findOneLocation(id);
+	}
+	
+	@PostMapping("/locations")
+	public LocationBean save(@RequestBody LocationBean location) {
+		return msLocationProxies.saveLocation(location);
+	}
+
+	@DeleteMapping("/locations/{idLocation}")
+	public void deleteLocation(@PathParam("idLocation") Long id) {
+		msLocationProxies.deleteLocation(id);
+	}
+	
+	@PutMapping(value = "/locations/{lId}")
+	public LocationBean updateLocation(@PathVariable(value = "id") Long id, @RequestBody LocationBean location) {
+		return msLocationProxies.updateLocation(id, location);
 	}
 	
 	//CustomerController

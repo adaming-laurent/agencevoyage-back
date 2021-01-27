@@ -25,11 +25,12 @@ public class Location implements Serializable{
 	
 	
 	public Location() {}
-	public Location( Long idLocation, String locationCode, String locationName) {
+	
+	public Location(String locationCode, String locationName, LocationType locationType) {
 		super();
-		this.idLocation = idLocation;
 		this.locationCode = locationCode;
 		this.locationName = locationName;
+		this.locationType = locationType;
 	}
 
 	public Long getIdLocation() {
@@ -68,11 +69,12 @@ public class Location implements Serializable{
 		this.locationType = locationType;
 	}
 	
-	public Location(String locationCode, String locationName, LocationType locationType) {
-		super();
-		this.locationCode = locationCode;
-		this.locationName = locationName;
-		this.locationType = locationType;
+	@Override
+	public String toString() {
+		return "Location [idLocation=" + idLocation + ", locationCode=" + locationCode + ", locationName="
+				+ locationName + ", locationType=" + locationType + "]";
 	}
+	
+	
 
 }

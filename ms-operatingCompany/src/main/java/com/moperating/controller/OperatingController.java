@@ -24,24 +24,24 @@ import com.moperating.service.interfaces.IOperatingService;
 @CrossOrigin
 public class OperatingController {
 	@Autowired
-	IOperatingService ioperatingService;
+	private IOperatingService ioperatingService;
 	
 	@Autowired
-	IOperatingMapper operatingMapper;
+	private IOperatingMapper ioperatingMapper;
 	
 	@GetMapping("/operatings")
 	public List<OperatingDTO> findAll() {
-		return (List<OperatingDTO>) ioperatingService.findAll().stream().map(o->operatingMapper.convertToOperatingDTO(o)).collect(Collectors.toList());
+		return (List<OperatingDTO>) ioperatingService.findAll().stream().map(o->ioperatingMapper.convertToOperatingDTO(o)).collect(Collectors.toList());
 	}
 	
 	@GetMapping("/operatings/{idOperating}")
-	public Operating findOne(@PathParam("idOperating") Long id) {
-		return ioperatingService.findOne(id);
+	public OperatingDTO findOne(@PathParam("idOperating") Long id) {
+		return ioperatingMapper.convertToOperatingDTO(ioperatingService.findOne(id));
 	}
 	
 	@PostMapping("/operatings")
 	public OperatingDTO save(@RequestBody Operating operating) {
-		return operatingMapper.convertToOperatingDTO(ioperatingService.save(operating));
+		return ioperatingMapper.convertToOperatingDTO(ioperatingService.save(operating));
 	}
 
 	@DeleteMapping("/operatings/{idOperating}")
@@ -54,6 +54,6 @@ public class OperatingController {
 		Operating currentOperating = ioperatingService.findOne(id);
 		currentOperating.setOperatingCompanyName(operating.getOperatingCompanyName());
 		currentOperating.setOperatingCompanyDetails(operating.getOperatingCompanyDetails());
-		return operatingMapper.convertToOperatingDTO(ioperatingService.save(currentOperating));
+		return ioperatingMapper.convertToOperatingDTO(ioperatingService.save(currentOperating));
 	}
 }

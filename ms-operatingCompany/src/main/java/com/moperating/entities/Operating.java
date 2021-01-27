@@ -16,14 +16,17 @@ public class Operating implements Serializable {
 	private Long operatingCompanyId;
 	private String operatingCompanyName;
 	private String operatingCompanyDetails;
+	
 	public Operating() {
 		super();
 	}
+	
 	public Operating(String operatingCompanyName, String operatingCompanyDetails) {
 		super();
 		this.operatingCompanyName = operatingCompanyName;
 		this.operatingCompanyDetails = operatingCompanyDetails;
 	}
+	
 	public Long getOperatingCompanyId() {
 		return operatingCompanyId;
 	}
