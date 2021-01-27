@@ -5,15 +5,18 @@ public class JourneyBean {
 	private Long idJourney;
 	private String originLocationCode;
 	private String destinationLocationCode;
-	private String operatingCompanyid;
+	private Long operatingCompanyid;
 	private String startDateAndTime;
 	private String endDateAndTime;
 	private String otherDetails;
-	
-	public JourneyBean() {}
-	
+
+	private Long CustomerId;
+
+	public JourneyBean() {
+	}
+
 	public JourneyBean(Long idJourney, String originLocationCode, String destinationLocationCode,
-			String operatingCompanyid, String startDateAndTime, String endDateAndTime, String otherDetails) {
+			Long operatingCompanyid, String startDateAndTime, String endDateAndTime, String otherDetails) {
 		this.idJourney = idJourney;
 		this.originLocationCode = originLocationCode;
 		this.destinationLocationCode = destinationLocationCode;
@@ -23,11 +26,24 @@ public class JourneyBean {
 		this.otherDetails = otherDetails;
 	}
 
-	public Long getJourneyId() {
+	public JourneyBean(Long idJourney, String originLocationCode, String destinationLocationCode,
+			Long operatingCompanyid, String startDateAndTime, String endDateAndTime, String otherDetails,
+			Long customerId) {
+		this.idJourney = idJourney;
+		this.originLocationCode = originLocationCode;
+		this.destinationLocationCode = destinationLocationCode;
+		this.operatingCompanyid = operatingCompanyid;
+		this.startDateAndTime = startDateAndTime;
+		this.endDateAndTime = endDateAndTime;
+		this.otherDetails = otherDetails;
+		this.CustomerId = customerId;
+	}
+
+	public Long getIdJourney() {
 		return idJourney;
 	}
 
-	public void setJourneyId(Long idJourney) {
+	public void setIdJourney(Long idJourney) {
 		this.idJourney = idJourney;
 	}
 
@@ -47,11 +63,11 @@ public class JourneyBean {
 		this.destinationLocationCode = destinationLocationCode;
 	}
 
-	public String getOperatingCompanyid() {
+	public Long getOperatingCompanyid() {
 		return operatingCompanyid;
 	}
 
-	public void setOperatingCompanyid(String operatingCompanyid) {
+	public void setOperatingCompanyid(Long operatingCompanyid) {
 		this.operatingCompanyid = operatingCompanyid;
 	}
 
@@ -78,12 +94,21 @@ public class JourneyBean {
 	public void setOtherDetails(String otherDetails) {
 		this.otherDetails = otherDetails;
 	}
-	
+
+	public Long getCustomerId() {
+		return CustomerId;
+	}
+
+	public void setCustomerId(Long customerId) {
+		CustomerId = customerId;
+	}
+
 	@Override
 	public String toString() {
-		return "Journey [idJourney=" + idJourney + ", originLocationCode=" + originLocationCode
+		return "JourneyBean [idJourney=" + idJourney + ", originLocationCode=" + originLocationCode
 				+ ", destinationLocationCode=" + destinationLocationCode + ", operatingCompanyid=" + operatingCompanyid
 				+ ", startDateAndTime=" + startDateAndTime + ", endDateAndTime=" + endDateAndTime + ", otherDetails="
-				+ otherDetails + "]";
+				+ otherDetails + ", CustomerId=" + CustomerId + "]";
 	}
+
 }

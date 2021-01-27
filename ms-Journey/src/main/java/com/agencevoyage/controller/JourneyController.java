@@ -23,28 +23,28 @@ public class JourneyController {
 
 	@Autowired
 	IJourneyMapper journeyMapper;
-	
+
 	@Autowired
 	IJourneyService journeyService;
-	
+
 	@GetMapping("/journeys")
-	public List<JourneyDTO> findAll(){
-		return (List<JourneyDTO>)journeyService.getJourneys().stream().map(e->
-		journeyMapper.convertToJourneyDTO(e)).collect(Collectors.toList());
-				
+	public List<JourneyDTO> findAll() {
+		return (List<JourneyDTO>) journeyService.getJourneys().stream().map(e -> journeyMapper.convertToJourneyDTO(e))
+				.collect(Collectors.toList());
+
 	}
-	
+
 	@GetMapping("/journeys/{id}")
 	public JourneyDTO findOne(@PathVariable("id") Long id) {
 		return journeyMapper.convertToJourneyDTO(journeyService.getJourney(id));
-		
+
 	}
-	
-	@PostMapping("/Journeys")
+
+	@PostMapping("/journeys")
 	public JourneyDTO saveJourney(@RequestBody Journey Journey) {
 		return journeyMapper.convertToJourneyDTO(journeyService.saveJourney(Journey));
 	}
-	
+
 //	@PutMapping("/journeys/{id}")
 //	public JourneyDTO updateJourney(@RequestBody Journey Journey, @PathVariable("id")Long id ) {
 //		Journey currentJourney = journeyService.getJourney(id);
@@ -56,10 +56,23 @@ public class JourneyController {
 //		currentJourney.setOtherDetails(Journey.getOtherDetails());
 //		return journeyMapper.convertToJourneyDTO(JourneyService.saveJourney(currentJourney));
 //	}
-	
+
 	@DeleteMapping("/journeys/{id}")
 	public void deleteJourney(@PathVariable("id") Long id) {
 		journeyService.deleteJourney(id);
+	}
+
+	@GetMapping("/journeys/location/{locCode}")
+	public List<JourneyDTO> findByDestinationLocationCode(@PathVariable("locCode") String destinationLocationCode) {
+		return (List<JourneyDTO>) journeyService.findByDestinationLocationCode(destinationLocationCode).stream()
+				.map(e -> journeyMapper.convertToJourneyDTO(e)).collect(Collectors.toList());
+
+	}
+
+	@GetMapping("/journeys/company/{idCompany}")
+	public List<JourneyDTO> findByOperatingCompanyid(@PathVariable("idCompany") Long operatingCompanyid) {
+		return (List<JourneyDTO>) journeyService.findByOperatingCompanyid(operatingCompanyid).stream()
+				.map(e -> journeyMapper.convertToJourneyDTO(e)).collect(Collectors.toList());
 
 	}
 }

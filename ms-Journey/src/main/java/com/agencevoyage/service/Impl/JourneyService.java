@@ -10,8 +10,8 @@ import com.agencevoyage.repositories.IJourneyRepository;
 import com.agencevoyage.service.IJourneyService;
 
 @Service
-public class JourneyService implements IJourneyService{
-	
+public class JourneyService implements IJourneyService {
+
 	@Autowired
 	public IJourneyRepository journeyRepository;
 
@@ -22,7 +22,8 @@ public class JourneyService implements IJourneyService{
 
 	@Override
 	public void deleteJourney(Long idJourney) {
-		journeyRepository.deleteById(idJourney);;
+		journeyRepository.deleteById(idJourney);
+		;
 	}
 
 	@Override
@@ -33,6 +34,16 @@ public class JourneyService implements IJourneyService{
 	@Override
 	public Journey getJourney(Long idJourney) {
 		return journeyRepository.findById(idJourney).get();
+	}
+
+	@Override
+	public List<Journey> findByOperatingCompanyid(Long operatingCompanyid) {
+		return journeyRepository.findByOperatingCompanyid(operatingCompanyid);
+	}
+
+	@Override
+	public List<Journey> findByDestinationLocationCode(String destinationLocationCode) {
+		return journeyRepository.findByDestinationLocationCode(destinationLocationCode);
 	}
 
 }

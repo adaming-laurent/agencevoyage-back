@@ -46,7 +46,7 @@ public interface MicroServiceJourneyProxies {
 	@PostMapping("/Flights")
 	public FlightBean saveFlight(@RequestBody FlightBean Flight);
 
-	@PostMapping("/Journeys")
+	@PostMapping("/journeys")
 	public JourneyBean saveJourney(@RequestBody JourneyBean Journey);
 
 	@PostMapping("/TrainRides")
@@ -66,4 +66,10 @@ public interface MicroServiceJourneyProxies {
 
 	@DeleteMapping("/RiverCruises/{id}")
 	public void deleteRiverCruise(@PathVariable("id") Long id);
+
+	@GetMapping("/journeys/location/{locCode}")
+	public List<JourneyBean> findByDestinationLocationCode(@PathVariable("locCode") String destinationLocationCode);
+
+	@GetMapping("/journeys/company/{idCompany}")
+	public List<JourneyBean> findByOperatingCompanyid(@PathVariable("idCompany") Long operatingCompanyid);
 }

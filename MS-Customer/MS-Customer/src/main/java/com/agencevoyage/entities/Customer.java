@@ -27,6 +27,7 @@ public class Customer implements Serializable {
 	private String Email;
 	private Integer PhoneNumber;
 	
+	private Long idJourney;
 
 	public Long getCustomerId() {
 		return CustomerId;
@@ -67,6 +68,15 @@ public class Customer implements Serializable {
 	public void setPhoneNumber(Integer phoneNumber) {
 		PhoneNumber = phoneNumber;
 	}
+	
+
+	public Long getIdJourney() {
+		return idJourney;
+	}
+
+	public void setIdJourney(Long idJourney) {
+		this.idJourney = idJourney;
+	}
 
 	public Customer(Long customerId, String customerName, LocalDate dateBecomeCustomer, String email,
 			Integer phoneNumber) {
@@ -76,6 +86,17 @@ public class Customer implements Serializable {
 		Email = email;
 		PhoneNumber = phoneNumber;
 	}
+	
+
+	public Customer(Long customerId, String customerName, LocalDate dateBecomeCustomer, String email,
+			Integer phoneNumber, Long idJourney) {
+		CustomerId = customerId;
+		CustomerName = customerName;
+		DateBecomeCustomer = dateBecomeCustomer;
+		Email = email;
+		PhoneNumber = phoneNumber;
+		this.idJourney = idJourney;
+	}
 
 	public Customer() {
 	}
@@ -83,7 +104,8 @@ public class Customer implements Serializable {
 	@Override
 	public String toString() {
 		return "Customer [CustomerId=" + CustomerId + ", CustomerName=" + CustomerName + ", DateBecomeCustomer="
-				+ DateBecomeCustomer + ", Email=" + Email + ", PhoneNumber=" + PhoneNumber + "]";
+				+ DateBecomeCustomer + ", Email=" + Email + ", PhoneNumber=" + PhoneNumber + ", idJourney=" + idJourney
+				+ "]";
 	}
 
 }

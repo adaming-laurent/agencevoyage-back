@@ -10,9 +10,11 @@ public class CustomerBean {
 	private String Email;
 	private Integer PhoneNumber;
 
+	private Long idJourney;
+
 	public CustomerBean() {
 	}
-	
+
 	public CustomerBean(Long customerId, String customerName, LocalDate dateBecomeCustomer, String email,
 			Integer phoneNumber) {
 		CustomerId = customerId;
@@ -20,6 +22,17 @@ public class CustomerBean {
 		DateBecomeCustomer = dateBecomeCustomer;
 		Email = email;
 		PhoneNumber = phoneNumber;
+	}
+
+	public CustomerBean(Long customerId, String customerName, LocalDate dateBecomeCustomer, String email,
+			Integer phoneNumber, Long idJourney) {
+		super();
+		CustomerId = customerId;
+		CustomerName = customerName;
+		DateBecomeCustomer = dateBecomeCustomer;
+		Email = email;
+		PhoneNumber = phoneNumber;
+		this.idJourney = idJourney;
 	}
 
 	public Long getCustomerId() {
@@ -65,7 +78,8 @@ public class CustomerBean {
 	@Override
 	public String toString() {
 		return "CustomerBean [CustomerId=" + CustomerId + ", CustomerName=" + CustomerName + ", DateBecomeCustomer="
-				+ DateBecomeCustomer + ", Email=" + Email + ", PhoneNumber=" + PhoneNumber + "]";
+				+ DateBecomeCustomer + ", Email=" + Email + ", PhoneNumber=" + PhoneNumber + ", idJourney=" + idJourney
+				+ "]";
 	}
 
 }

@@ -29,23 +29,21 @@ import com.clientui.proxies.MicroServiceOperatingProxies;
 @RestController
 @CrossOrigin
 public class ClientController {
-	
+
 	@Autowired
 	private MicroServiceJourneyProxies msJourneyProxies;
-	
+
 	@Autowired
 	private MicroServiceOperatingProxies msOperatingProxies;
 
 	@Autowired
 	private MicroServiceLocationProxies msLocationProxies;
-	
+
 	@Autowired
 	private MicroServiceCustomerProxies msCustomerProxies;
-	
 
-	
-	//JourneyController
-	
+	// JourneyController
+
 	@GetMapping("/Flights")
 	public List<FlightBean> findAllFlight() {
 		return msJourneyProxies.findAllFlight();
@@ -125,20 +123,29 @@ public class ClientController {
 	public void deleteRiverCruise(@PathVariable("id") Long id) {
 		msJourneyProxies.deleteFlight(id);
 	}
-	
-	
-	//OperatingController
-	
+
+	@GetMapping("/journeys/location/{locCode}")
+	public List<JourneyBean> findByDestinationLocationCode(@PathVariable("locCode") String destinationLocationCode) {
+		return msJourneyProxies.findByDestinationLocationCode(destinationLocationCode);
+	}
+
+	@GetMapping("/journeys/company/{idCompany}")
+	public List<JourneyBean> findByOperatingCompanyid(@PathVariable("idCompany") Long operatingCompanyid) {
+		return msJourneyProxies.findByOperatingCompanyid(operatingCompanyid);
+	}
+
+	// OperatingController
+
 	@GetMapping("/operatings")
 	public List<OperatingBean> findAllOperationg() {
 		return msOperatingProxies.findAllOperating();
 	}
-	
+
 	@GetMapping("/operatings/{idOperating}")
 	public OperatingBean findOneOperating(@PathParam("idOperating") Long id) {
 		return msOperatingProxies.findOneOperating(id);
 	}
-	
+
 	@PostMapping("/operatings")
 	public OperatingBean save(@RequestBody OperatingBean operating) {
 		return msOperatingProxies.saveOperating(operating);
@@ -148,24 +155,24 @@ public class ClientController {
 	public void deleteOperating(@PathParam("idOperating") Long id) {
 		msOperatingProxies.deleteOperating(id);
 	}
-	
+
 	@PutMapping(value = "/operatings/{oId}")
 	public OperatingBean updateOperating(@PathVariable(value = "id") Long id, @RequestBody OperatingBean operating) {
 		return msOperatingProxies.updateOperating(id, operating);
 	}
-	
-	//LocationController
-	
+
+	// LocationController
+
 	@GetMapping("/locations")
 	public List<LocationBean> findAllLocation() {
 		return msLocationProxies.findAllLocation();
 	}
-	
+
 	@GetMapping("/locations/{idLocation}")
 	public LocationBean findOneLocation(@PathParam("idLocation") Long id) {
 		return msLocationProxies.findOneLocation(id);
 	}
-	
+
 	@PostMapping("/locations")
 	public LocationBean save(@RequestBody LocationBean location) {
 		return msLocationProxies.saveLocation(location);
@@ -175,14 +182,14 @@ public class ClientController {
 	public void deleteLocation(@PathParam("idLocation") Long id) {
 		msLocationProxies.deleteLocation(id);
 	}
-	
+
 	@PutMapping(value = "/locations/{lId}")
 	public LocationBean updateLocation(@PathVariable(value = "id") Long id, @RequestBody LocationBean location) {
 		return msLocationProxies.updateLocation(id, location);
 	}
-	
-	//CustomerController
-	
+
+	// CustomerController
+
 	@GetMapping(value = "/customers")
 	public List<CustomerBean> getAll() {
 		return msCustomerProxies.getAll();

@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Journey implements Serializable{
+public class Journey implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -17,16 +17,18 @@ public class Journey implements Serializable{
 	private Long idJourney;
 	private String originLocationCode;
 	private String destinationLocationCode;
-	private String operatingCompanyid;
+	private Long operatingCompanyid;
 	private String startDateAndTime;
 	private String endDateAndTime;
 	private String otherDetails;
-	
-	
-	public Journey() {}
-	
-	public Journey(Long idJourney, String originLocationCode, String destinationLocationCode,
-			String operatingCompanyid, String startDateAndTime, String endDateAndTime, String otherDetails) {
+
+	private Long CustomerId;
+
+	public Journey() {
+	}
+
+	public Journey(Long idJourney, String originLocationCode, String destinationLocationCode, Long operatingCompanyid,
+			String startDateAndTime, String endDateAndTime, String otherDetails) {
 		this.idJourney = idJourney;
 		this.originLocationCode = originLocationCode;
 		this.destinationLocationCode = destinationLocationCode;
@@ -36,12 +38,24 @@ public class Journey implements Serializable{
 		this.otherDetails = otherDetails;
 	}
 
-	public Long getJourneyId() {
-		return idJourney;
+	public Journey(Long idJourney, String originLocationCode, String destinationLocationCode, Long operatingCompanyid,
+			String startDateAndTime, String endDateAndTime, String otherDetails, Long customerId) {
+		this.idJourney = idJourney;
+		this.originLocationCode = originLocationCode;
+		this.destinationLocationCode = destinationLocationCode;
+		this.operatingCompanyid = operatingCompanyid;
+		this.startDateAndTime = startDateAndTime;
+		this.endDateAndTime = endDateAndTime;
+		this.otherDetails = otherDetails;
+		CustomerId = customerId;
 	}
 
-	public void setJourneyId(Long idJourney) {
-		this.idJourney = idJourney;
+	public Long getCustomerId() {
+		return CustomerId;
+	}
+
+	public void setCustomerId(Long customerId) {
+		CustomerId = customerId;
 	}
 
 	public String getOriginLocationCode() {
@@ -60,11 +74,11 @@ public class Journey implements Serializable{
 		this.destinationLocationCode = destinationLocationCode;
 	}
 
-	public String getOperatingCompanyid() {
+	public Long getOperatingCompanyid() {
 		return operatingCompanyid;
 	}
 
-	public void setOperatingCompanyid(String operatingCompanyid) {
+	public void setOperatingCompanyid(Long operatingCompanyid) {
 		this.operatingCompanyid = operatingCompanyid;
 	}
 
@@ -92,12 +106,20 @@ public class Journey implements Serializable{
 		this.otherDetails = otherDetails;
 	}
 
+	public Long getIdJourney() {
+		return idJourney;
+	}
+
+	public void setIdJourney(Long idJourney) {
+		this.idJourney = idJourney;
+	}
+
 	@Override
 	public String toString() {
 		return "Journey [idJourney=" + idJourney + ", originLocationCode=" + originLocationCode
 				+ ", destinationLocationCode=" + destinationLocationCode + ", operatingCompanyid=" + operatingCompanyid
 				+ ", startDateAndTime=" + startDateAndTime + ", endDateAndTime=" + endDateAndTime + ", otherDetails="
-				+ otherDetails + "]";
+				+ otherDetails + ", CustomerId=" + CustomerId + "]";
 	}
 
 }
