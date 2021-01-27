@@ -1,20 +1,22 @@
 package com.agencevoyage.dto;
 
+import java.time.LocalDateTime;
+
 public class JourneyDTO {
 
 	private Long idJourney;
 	private String originLocationCode;
 	private String destinationLocationCode;
-	private String operatingCompanyid;
-	private String startDateAndTime;
-	private String endDateAndTime;
+	private Long operatingCompanyid;
+	private LocalDateTime startDateAndTime;
+	private LocalDateTime endDateAndTime;
 	private String otherDetails;
 	
 	
 	public JourneyDTO() {}
 	
 	public JourneyDTO(Long idJourney, String originLocationCode, String destinationLocationCode,
-			String operatingCompanyid, String startDateAndTime, String endDateAndTime, String otherDetails) {
+			Long operatingCompanyid, LocalDateTime startDateAndTime, LocalDateTime endDateAndTime, String otherDetails) {
 		this.idJourney = idJourney;
 		this.originLocationCode = originLocationCode;
 		this.destinationLocationCode = destinationLocationCode;
@@ -48,27 +50,27 @@ public class JourneyDTO {
 		this.destinationLocationCode = destinationLocationCode;
 	}
 
-	public String getOperatingCompanyid() {
+	public Long getOperatingCompanyid() {
 		return operatingCompanyid;
 	}
 
-	public void setOperatingCompanyid(String operatingCompanyid) {
+	public void setOperatingCompanyid(Long operatingCompanyid) {
 		this.operatingCompanyid = operatingCompanyid;
 	}
 
-	public String getStartDateAndTime() {
+	public LocalDateTime getStartDateAndTime() {
 		return startDateAndTime;
 	}
 
-	public void setStartDateAndTime(String startDateAndTime) {
+	public void setStartDateAndTime(LocalDateTime startDateAndTime) {
 		this.startDateAndTime = startDateAndTime;
 	}
 
-	public String getEndDateAndTime() {
+	public LocalDateTime getEndDateAndTime() {
 		return endDateAndTime;
 	}
 
-	public void setEndDateAndTime(String endDateAndTime) {
+	public void setEndDateAndTime(LocalDateTime endDateAndTime) {
 		this.endDateAndTime = endDateAndTime;
 	}
 
