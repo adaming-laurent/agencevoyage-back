@@ -142,7 +142,7 @@ public class ClientController {
 	}
 
 	@GetMapping("/operatings/{idOperating}")
-	public OperatingBean findOneOperating(@PathParam("idOperating") Long id) {
+	public OperatingBean findOneOperating(@PathVariable("idOperating") Long id) {
 		return msOperatingProxies.findOneOperating(id);
 	}
 
@@ -152,7 +152,7 @@ public class ClientController {
 	}
 
 	@DeleteMapping("/operatings/{idOperating}")
-	public void deleteOperating(@PathParam("idOperating") Long id) {
+	public void deleteOperating(@PathVariable("idOperating") Long id) {
 		msOperatingProxies.deleteOperating(id);
 	}
 
@@ -169,7 +169,7 @@ public class ClientController {
 	}
 
 	@GetMapping("/locations/{idLocation}")
-	public LocationBean findOneLocation(@PathParam("idLocation") Long id) {
+	public LocationBean findOneLocation(@PathVariable("idLocation") Long id) {
 		return msLocationProxies.findOneLocation(id);
 	}
 
@@ -179,7 +179,7 @@ public class ClientController {
 	}
 
 	@DeleteMapping("/locations/{idLocation}")
-	public void deleteLocation(@PathParam("idLocation") Long id) {
+	public void deleteLocation(@PathVariable("idLocation") Long id) {
 		msLocationProxies.deleteLocation(id);
 	}
 

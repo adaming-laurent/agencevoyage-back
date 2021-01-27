@@ -2,38 +2,38 @@ package com.clientui.beans;
 
 public class OperatingBean {
 	
-	private Long OperatingCompanyId;
-	private String OperatingCompanyName;
-	private String OperatingCompanyDetails;
+	private Long operatingCompanyId;
+	private String operatingCompanyName;
+	private String operatingCompanyDetails;
 	
 	public OperatingBean() {
 	}
 	public OperatingBean(String operatingCompanyName, String operatingCompanyDetails) {
-		OperatingCompanyName = operatingCompanyName;
-		OperatingCompanyDetails = operatingCompanyDetails;
+		this.operatingCompanyName = operatingCompanyName;
+		this.operatingCompanyDetails = operatingCompanyDetails;
 	}
 	public Long getOperatingCompanyId() {
-		return OperatingCompanyId;
+		return operatingCompanyId;
 	}
 	public void setOperatingCompanyId(Long operatingCompanyId) {
-		OperatingCompanyId = operatingCompanyId;
+		this.operatingCompanyId = operatingCompanyId;
 	}
 	public String getOperatingCompanyName() {
-		return OperatingCompanyName;
+		return operatingCompanyName;
 	}
 	public void setOperatingCompanyName(String operatingCompanyName) {
-		OperatingCompanyName = operatingCompanyName;
+		this.operatingCompanyName = operatingCompanyName;
 	}
 	public String getOperatingCompanyDetails() {
-		return OperatingCompanyDetails;
+		return operatingCompanyDetails;
 	}
 	public void setOperatingCompanyDetails(String operatingCompanyDetails) {
-		OperatingCompanyDetails = operatingCompanyDetails;
+		this.operatingCompanyDetails = operatingCompanyDetails;
 	}
 	@Override
 	public String toString() {
-		return "OperatingCompany [OperatingCompanyId=" + OperatingCompanyId + ", OperatingCompanyName="
-				+ OperatingCompanyName + ", OperatingCompanyDetails=" + OperatingCompanyDetails + "]";
+		return "OperatingCompany [OperatingCompanyId=" + operatingCompanyId + ", OperatingCompanyName="
+				+ operatingCompanyName + ", OperatingCompanyDetails=" + operatingCompanyDetails + "]";
 	}
 	
 }
