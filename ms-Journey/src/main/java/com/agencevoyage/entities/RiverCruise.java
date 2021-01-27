@@ -1,21 +1,25 @@
 package com.agencevoyage.entities;
 
-public class RiverCruise extends Journey{
-	
+import javax.persistence.Entity;
+
+@Entity
+public class RiverCruise extends Journey {
+
 	private static final long serialVersionUID = 1L;
 	private Long idRiverCruise;
 	private String nameOfTheBoat;
 	private String portOfRegistration;
-	
-	public RiverCruise() {}
-	
+
+	public RiverCruise() {
+	}
+
 	public RiverCruise(Long idRiverCruise, String nameOfTheBoat, String portOfRegistration) {
 		super();
-		this.idRiverCruise = idRiverCruise ;
+		this.idRiverCruise = idRiverCruise;
 		this.nameOfTheBoat = nameOfTheBoat;
 		this.portOfRegistration = portOfRegistration;
 	}
-	
+
 	public Long getIdRiverCruise() {
 		return idRiverCruise;
 	}
@@ -45,5 +49,5 @@ public class RiverCruise extends Journey{
 		return "RiverCruise [idRiverCruise=" + idRiverCruise + ", nameOfTheBoat=" + nameOfTheBoat
 				+ ", portOfRegistration=" + portOfRegistration + "]";
 	}
-	
+
 }

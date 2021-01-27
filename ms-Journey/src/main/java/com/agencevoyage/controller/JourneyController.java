@@ -9,16 +9,13 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.agencevoyage.dto.JourneyDTO;
 import com.agencevoyage.entities.Journey;
 import com.agencevoyage.mapper.IJourneyMapper;
-import com.agencevoyage.mapper.Impl.JourneyMapper;
 import com.agencevoyage.service.IJourneyService;
-import com.agencevoyage.service.Impl.JourneyService;
 
 @CrossOrigin
 @RestController
