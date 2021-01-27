@@ -3,7 +3,6 @@ package com.moperating.controller;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import javax.ws.rs.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -45,7 +44,7 @@ public class OperatingController {
 	}
 
 	@DeleteMapping("/operatings/{idOperating}")
-	public void delete(@PathParam("idOperating") Long id) {
+	public void delete(@PathVariable("idOperating") Long id) {
 		ioperatingService.delete(id);
 	}
 	
