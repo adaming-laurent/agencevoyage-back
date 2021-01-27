@@ -35,7 +35,7 @@ public class LocationController {
 	}
 	
 	@GetMapping("/locations/{idLocation}")
-	public LocationDTO findOne(@PathParam("idLocation") Long id) {
+	public LocationDTO findOne(@PathVariable("idLocation") Long id) {
 		return ilocationMapper.convertToLocationDTO(ilocationService.findOne(id));
 	}
 	
@@ -45,7 +45,7 @@ public class LocationController {
 	}
 
 	@DeleteMapping("/locations/{idLocation}")
-	public void delete(@PathParam("idLocation") Long id) {
+	public void delete(@PathVariable("idLocation") Long id) {
 		ilocationService.delete(id);
 	}
 	

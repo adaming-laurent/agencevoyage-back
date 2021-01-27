@@ -4,6 +4,8 @@ import java.io.Serializable;
 //import java.util.ArrayList;
 //import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 //import javax.persistence.OneToMany;
@@ -20,6 +22,7 @@ public class Location implements Serializable{
 	private Long idLocation;
 	private String locationCode;
 	private String locationName;
+	@Enumerated(EnumType.ORDINAL)
 	private LocationType locationType;
 	
 //	@OneToMany(mappedBy = "location")

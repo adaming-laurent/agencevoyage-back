@@ -3,7 +3,7 @@ package com.moperating.controller;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import javax.websocket.server.PathParam;
+import javax.ws.rs.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -35,7 +35,7 @@ public class OperatingController {
 	}
 	
 	@GetMapping("/operatings/{idOperating}")
-	public OperatingDTO findOne(@PathParam("idOperating") Long id) {
+	public OperatingDTO findOne(@PathVariable("idOperating") Long id) {
 		return ioperatingMapper.convertToOperatingDTO(ioperatingService.findOne(id));
 	}
 	
