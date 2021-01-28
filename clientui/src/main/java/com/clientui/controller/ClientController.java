@@ -183,7 +183,7 @@ public class ClientController {
 	}
 
 	@PutMapping(value = "/locations/{lId}")
-	public LocationBean updateLocation(@PathVariable(value = "lid") Long id, @RequestBody LocationBean location) {
+	public LocationBean updateLocation(@PathVariable(value = "lId") Long id, @RequestBody LocationBean location) {
 		return msLocationProxies.updateLocation(id, location);
 	}
 
