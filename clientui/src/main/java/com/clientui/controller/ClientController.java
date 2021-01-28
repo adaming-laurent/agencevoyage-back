@@ -156,7 +156,7 @@ public class ClientController {
 	}
 
 	@PutMapping(value = "/operatings/{oId}")
-	public OperatingBean updateOperating(@PathVariable(value = "id") Long id, @RequestBody OperatingBean operating) {
+	public OperatingBean updateOperating(@PathVariable(value = "oId") Long id, @RequestBody OperatingBean operating) {
 		return msOperatingProxies.updateOperating(id, operating);
 	}
 
@@ -183,7 +183,7 @@ public class ClientController {
 	}
 
 	@PutMapping(value = "/locations/{lId}")
-	public LocationBean updateLocation(@PathVariable(value = "id") Long id, @RequestBody LocationBean location) {
+	public LocationBean updateLocation(@PathVariable(value = "lId") Long id, @RequestBody LocationBean location) {
 		return msLocationProxies.updateLocation(id, location);
 	}
 
