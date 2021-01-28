@@ -19,56 +19,55 @@ public class Customer implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long CustomerId;
-	private String CustomerName;
+	private Long customerId;
+	private String customerName;
 	@JsonDeserialize(using = LocalDateDeserializer.class)
 	@JsonSerialize(using = LocalDateSerializer.class)
-	private LocalDate DateBecomeCustomer;
-	private String Email;
-	private Integer PhoneNumber;
-	
+	private LocalDate dateBecomeCustomer;
+	private String email;
+	private Integer phoneNumber;
+
 	private Long idJourney;
 
 	public Long getCustomerId() {
-		return CustomerId;
+		return customerId;
 	}
 
 	public void setCustomerId(Long customerId) {
-		CustomerId = customerId;
+		this.customerId = customerId;
 	}
 
 	public String getCustomerName() {
-		return CustomerName;
+		return customerName;
 	}
 
 	public void setCustomerName(String customerName) {
-		CustomerName = customerName;
+		this.customerName = customerName;
 	}
 
 	public LocalDate getDateBecomeCustomer() {
-		return DateBecomeCustomer;
+		return dateBecomeCustomer;
 	}
 
 	public void setDateBecomeCustomer(LocalDate dateBecomeCustomer) {
-		DateBecomeCustomer = dateBecomeCustomer;
+		this.dateBecomeCustomer = dateBecomeCustomer;
 	}
 
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
 
 	public Integer getPhoneNumber() {
-		return PhoneNumber;
+		return phoneNumber;
 	}
 
 	public void setPhoneNumber(Integer phoneNumber) {
-		PhoneNumber = phoneNumber;
+		this.phoneNumber = phoneNumber;
 	}
-	
 
 	public Long getIdJourney() {
 		return idJourney;
@@ -80,21 +79,20 @@ public class Customer implements Serializable {
 
 	public Customer(Long customerId, String customerName, LocalDate dateBecomeCustomer, String email,
 			Integer phoneNumber) {
-		CustomerId = customerId;
-		CustomerName = customerName;
-		DateBecomeCustomer = dateBecomeCustomer;
-		Email = email;
-		PhoneNumber = phoneNumber;
+		this.customerId = customerId;
+		this.customerName = customerName;
+		this.dateBecomeCustomer = dateBecomeCustomer;
+		this.email = email;
+		this.phoneNumber = phoneNumber;
 	}
-	
 
 	public Customer(Long customerId, String customerName, LocalDate dateBecomeCustomer, String email,
 			Integer phoneNumber, Long idJourney) {
-		CustomerId = customerId;
-		CustomerName = customerName;
-		DateBecomeCustomer = dateBecomeCustomer;
-		Email = email;
-		PhoneNumber = phoneNumber;
+		this.customerId = customerId;
+		this.customerName = customerName;
+		this.dateBecomeCustomer = dateBecomeCustomer;
+		this.email = email;
+		this.phoneNumber = phoneNumber;
 		this.idJourney = idJourney;
 	}
 
@@ -103,8 +101,8 @@ public class Customer implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Customer [CustomerId=" + CustomerId + ", CustomerName=" + CustomerName + ", DateBecomeCustomer="
-				+ DateBecomeCustomer + ", Email=" + Email + ", PhoneNumber=" + PhoneNumber + ", idJourney=" + idJourney
+		return "Customer [customerId=" + customerId + ", customerName=" + customerName + ", dateBecomeCustomer="
+				+ dateBecomeCustomer + ", email=" + email + ", phoneNumber=" + phoneNumber + ", idJourney=" + idJourney
 				+ "]";
 	}
 
