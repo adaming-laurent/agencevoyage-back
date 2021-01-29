@@ -1,14 +1,17 @@
 package com.clientui.beans;
 
-public class FlightBean {
+import java.time.LocalDateTime;
+
+public class FlightBean extends JourneyBean{
 
 	private Long idFlight;
 	private String flightNumber;
 
 	public FlightBean() {}
 
-	public FlightBean(Long idFlight, String flightNumber) {
-		super();
+	public FlightBean(Long idJourney,String originLocationCode, String destinationLocationCode, Long operatingCompanyid,
+			LocalDateTime startDateAndTime, LocalDateTime endDateAndTime, String otherDetails, Long idFlight, String flightNumber) {
+		super( idJourney, originLocationCode, destinationLocationCode, operatingCompanyid, startDateAndTime, endDateAndTime, otherDetails);
 		this.idFlight = idFlight;
 		this.flightNumber = flightNumber;
 	}

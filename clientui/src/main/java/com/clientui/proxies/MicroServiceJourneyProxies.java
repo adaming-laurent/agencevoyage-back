@@ -19,10 +19,10 @@ import com.clientui.beans.TrainRideBean;
 @RibbonClient(name = "microservice-journey")
 public interface MicroServiceJourneyProxies {
 
-	@GetMapping("/Flights")
+	@GetMapping("/flights")
 	public List<FlightBean> findAllFlight();
 
-	@GetMapping("/Flights/{id}")
+	@GetMapping("/flights/{id}")
 	public FlightBean findOneFlight(@PathVariable("id") Long id);
 
 	@GetMapping("/journeys")
@@ -31,40 +31,40 @@ public interface MicroServiceJourneyProxies {
 	@GetMapping("/journeys/{id}")
 	public JourneyBean findOneJourney(@PathVariable("id") Long id);
 
-	@GetMapping("/TrainRides")
+	@GetMapping("/trainRides")
 	public List<TrainRideBean> findAllTrainRides();
 
-	@GetMapping("/TrainRides/{id}")
+	@GetMapping("/trainRides/{id}")
 	public TrainRideBean findOneTrainRides(@PathVariable("id") Long id);
 
-	@GetMapping("/RiverCruises")
+	@GetMapping("/riverCruises")
 	public List<RiverCruiseBean> findAllRiverCruise();
 
-	@GetMapping("/RiverCruises/{id}")
+	@GetMapping("/riverCruises/{id}")
 	public RiverCruiseBean findOneRiverCruise(@PathVariable("id") Long id);
 
-	@PostMapping("/Flights")
+	@PostMapping("/flights")
 	public FlightBean saveFlight(@RequestBody FlightBean Flight);
 
 	@PostMapping("/journeys")
 	public JourneyBean saveJourney(@RequestBody JourneyBean Journey);
 
-	@PostMapping("/TrainRides")
+	@PostMapping("/trainRides")
 	public TrainRideBean saveTrainRide(@RequestBody TrainRideBean TrainRide);
 
-	@PostMapping("/RiverCruises")
+	@PostMapping("/riverCruises")
 	public RiverCruiseBean saveRiverCruise(@RequestBody RiverCruiseBean RiverCruise);
 
-	@DeleteMapping("/Flights/{id}")
+	@DeleteMapping("/flights/{id}")
 	public void deleteFlight(@PathVariable("id") Long id);
 
 	@DeleteMapping("/journeys/{id}")
 	public void deleteJourney(@PathVariable("id") Long id);
 
-	@DeleteMapping("/TrainRides/{id}")
+	@DeleteMapping("/trainRides/{id}")
 	public void deleteTrainRide(@PathVariable("id") Long id);
 
-	@DeleteMapping("/RiverCruises/{id}")
+	@DeleteMapping("/riverCruises/{id}")
 	public void deleteRiverCruise(@PathVariable("id") Long id);
 
 	@GetMapping("/journeys/location/{locCode}")

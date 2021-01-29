@@ -1,13 +1,16 @@
 package com.agencevoyage.dto;
 
-public class FlightDTO {
+import java.time.LocalDateTime;
+
+public class FlightDTO extends JourneyDTO{
 
 	private Long idFlight;
 	private String flightNumber;
 
 	public FlightDTO() {}
-	public FlightDTO(Long idFlight, String flightNumber) {
-		super();
+	public FlightDTO(Long idJourney,String originLocationCode, String destinationLocationCode, Long operatingCompanyid,
+			LocalDateTime startDateAndTime, LocalDateTime endDateAndTime, String otherDetails, Long idFlight, String flightNumber) {
+		super( idJourney, originLocationCode, destinationLocationCode, operatingCompanyid, startDateAndTime, endDateAndTime, otherDetails);
 		this.idFlight = idFlight;
 		this.flightNumber = flightNumber;
 	}

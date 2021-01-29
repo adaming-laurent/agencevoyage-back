@@ -1,6 +1,8 @@
 package com.clientui.beans;
 
-public class RiverCruiseBean {
+import java.time.LocalDateTime;
+
+public class RiverCruiseBean extends JourneyBean{
 
 	private Long idRiverCruise;
 	private String nameOfTheBoat;
@@ -8,8 +10,9 @@ public class RiverCruiseBean {
 	
 	public RiverCruiseBean() {}
 	
-	public RiverCruiseBean(Long idRiverCruise, String nameOfTheBoat, String portOfRegistration) {
-		super();
+	public RiverCruiseBean(Long idJourney,String originLocationCode, String destinationLocationCode, Long operatingCompanyid,
+			LocalDateTime startDateAndTime, LocalDateTime endDateAndTime, String otherDetails, Long idRiverCruise, String nameOfTheBoat, String portOfRegistration) {
+		super( idJourney, originLocationCode, destinationLocationCode, operatingCompanyid, startDateAndTime, endDateAndTime, otherDetails);
 		this.idRiverCruise = idRiverCruise ;
 		this.nameOfTheBoat = nameOfTheBoat;
 		this.portOfRegistration = portOfRegistration;

@@ -1,6 +1,8 @@
 package com.agencevoyage.dto;
 
-public class RiverCruiseDTO {
+import java.time.LocalDateTime;
+
+public class RiverCruiseDTO extends JourneyDTO{
 
 	private Long idRiverCruise;
 	private String nameOfTheBoat;
@@ -8,8 +10,9 @@ public class RiverCruiseDTO {
 	
 	public RiverCruiseDTO() {}
 	
-	public RiverCruiseDTO(Long idRiverCruise, String nameOfTheBoat, String portOfRegistration) {
-		super();
+	public RiverCruiseDTO(Long idJourney,String originLocationCode, String destinationLocationCode, Long operatingCompanyid,
+			LocalDateTime startDateAndTime, LocalDateTime endDateAndTime, String otherDetails, Long idRiverCruise, String nameOfTheBoat, String portOfRegistration) {
+		super( idJourney, originLocationCode, destinationLocationCode, operatingCompanyid, startDateAndTime, endDateAndTime, otherDetails);
 		this.idRiverCruise = idRiverCruise ;
 		this.nameOfTheBoat = nameOfTheBoat;
 		this.portOfRegistration = portOfRegistration;

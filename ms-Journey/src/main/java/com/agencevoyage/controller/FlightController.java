@@ -27,20 +27,20 @@ public class FlightController {
 	@Autowired
 	IFlightService FlightService;
 	
-	@GetMapping("/Flights")
+	@GetMapping("/flights")
 	public List<FlightDTO> findAll(){
 		return (List<FlightDTO>)FlightService.getFlights().stream().map(e->
 		FlightMapper.convertToFlightDTO(e)).collect(Collectors.toList());
 				
 	}
 	
-	@GetMapping("/Flights/{id}")
+	@GetMapping("/flights/{id}")
 	public FlightDTO findOne(@PathVariable("id") Long id) {
 		return FlightMapper.convertToFlightDTO(FlightService.getFlight(id));
 		
 	}
 	
-	@PostMapping("/Flights")
+	@PostMapping("/flights")
 	public FlightDTO saveFlight(@RequestBody Flight Flight) {
 		return FlightMapper.convertToFlightDTO(FlightService.saveFlight(Flight));
 	}
@@ -54,7 +54,7 @@ public class FlightController {
 //		return FlightMapper.convertToFlightDTO(FlightService.saveFlight(currentFlight));
 //	}
 	
-	@DeleteMapping("/Flights/{id}")
+	@DeleteMapping("/flights/{id}")
 	public void deleteFlight(@PathVariable("id") Long id) {
 		FlightService.deleteFlight(id);
 

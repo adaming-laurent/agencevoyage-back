@@ -27,20 +27,20 @@ public class TrainRideController {
 	@Autowired
 	ITrainRideService TrainRideService;
 	
-	@GetMapping("/TrainRides")
+	@GetMapping("/trainRides")
 	public List<TrainRideDTO> findAll(){
 		return (List<TrainRideDTO>)TrainRideService.getTrainRides().stream().map(e->
 		TrainRideMapper.convertToTrainRideDTO(e)).collect(Collectors.toList());
 				
 	}
 	
-	@GetMapping("/TrainRides/{id}")
+	@GetMapping("/trainRides/{id}")
 	public TrainRideDTO findOne(@PathVariable("id") Long id) {
 		return TrainRideMapper.convertToTrainRideDTO(TrainRideService.getTrainRide(id));
 		
 	}
 	
-	@PostMapping("/TrainRides")
+	@PostMapping("/trainRides")
 	public TrainRideDTO saveTrainRide(@RequestBody TrainRide TrainRide) {
 		return TrainRideMapper.convertToTrainRideDTO(TrainRideService.saveTrainRide(TrainRide));
 	}
@@ -54,7 +54,7 @@ public class TrainRideController {
 //		return TrainRideMapper.convertToTrainRideDTO(TrainRideService.saveTrainRide(currentTrainRide));
 //	}
 	
-	@DeleteMapping("/TrainRides/{id}")
+	@DeleteMapping("/trainRides/{id}")
 	public void deleteTrainRide(@PathVariable("id") Long id) {
 		TrainRideService.deleteTrainRide(id);
 

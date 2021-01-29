@@ -43,7 +43,7 @@ public class ClientController {
 
 	// JourneyController
 
-	@GetMapping("/Flights")
+	@GetMapping("/flights")
 	public List<FlightBean> findAllFlight() {
 		return msJourneyProxies.findAllFlight();
 	}
@@ -63,47 +63,47 @@ public class ClientController {
 		return msJourneyProxies.findOneJourney(id);
 	}
 
-	@GetMapping("/TrainRides")
+	@GetMapping("/trainRides")
 	public List<TrainRideBean> findAllTrainRides() {
 		return msJourneyProxies.findAllTrainRides();
 	}
 
-	@GetMapping("/TrainRides/{id}")
+	@GetMapping("/trainRides/{id}")
 	public TrainRideBean findOneTrainRides(@PathVariable("id") Long id) {
 		return msJourneyProxies.findOneTrainRides(id);
 	}
 
-	@GetMapping("/RiverCruises")
+	@GetMapping("/riverCruises")
 	public List<RiverCruiseBean> findAllRiverCruise() {
 		return msJourneyProxies.findAllRiverCruise();
 	}
 
-	@GetMapping("/RiverCruises/{id}")
+	@GetMapping("/riverCruises/{id}")
 	public RiverCruiseBean findOneRiverCruise(@PathVariable("id") Long id) {
 		return msJourneyProxies.findOneRiverCruise(id);
 	}
 
-	@PostMapping("/Flights")
+	@PostMapping("/flights")
 	public FlightBean saveFlight(@RequestBody FlightBean Flight) {
 		return msJourneyProxies.saveFlight(Flight);
 	}
 
-	@PostMapping("/Journeys")
+	@PostMapping("/journeys")
 	public JourneyBean saveJourney(@RequestBody JourneyBean Journey) {
 		return msJourneyProxies.saveJourney(Journey);
 	}
 
-	@PostMapping("/TrainRides")
+	@PostMapping("/trainRides")
 	public TrainRideBean saveTrainRide(@RequestBody TrainRideBean TrainRide) {
 		return msJourneyProxies.saveTrainRide(TrainRide);
 	}
 
-	@PostMapping("/RiverCruises")
+	@PostMapping("/riverCruises")
 	public RiverCruiseBean saveRiverCruise(@RequestBody RiverCruiseBean RiverCruise) {
 		return msJourneyProxies.saveRiverCruise(RiverCruise);
 	}
 
-	@DeleteMapping("/Flights/{id}")
+	@DeleteMapping("/flights/{id}")
 	public void deleteFlight(@PathVariable("id") Long id) {
 		msJourneyProxies.deleteFlight(id);
 	}
@@ -113,12 +113,12 @@ public class ClientController {
 		msJourneyProxies.deleteFlight(id);
 	}
 
-	@DeleteMapping("/TrainRides/{id}")
+	@DeleteMapping("/trainRides/{id}")
 	public void deleteTrainRide(@PathVariable("id") Long id) {
 		msJourneyProxies.deleteFlight(id);
 	}
 
-	@DeleteMapping("/RiverCruises/{id}")
+	@DeleteMapping("/riverCruises/{id}")
 	public void deleteRiverCruise(@PathVariable("id") Long id) {
 		msJourneyProxies.deleteFlight(id);
 	}

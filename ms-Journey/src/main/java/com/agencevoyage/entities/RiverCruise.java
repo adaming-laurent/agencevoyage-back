@@ -1,11 +1,14 @@
 package com.agencevoyage.entities;
 
+import java.time.LocalDateTime;
+
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
+@DiscriminatorValue("RiverCruise")
 public class RiverCruise extends Journey {
 
-	private static final long serialVersionUID = 1L;
 	private Long idRiverCruise;
 	private String nameOfTheBoat;
 	private String portOfRegistration;
@@ -13,8 +16,9 @@ public class RiverCruise extends Journey {
 	public RiverCruise() {
 	}
 
-	public RiverCruise(Long idRiverCruise, String nameOfTheBoat, String portOfRegistration) {
-		super();
+	public RiverCruise(Long idJourney,String originLocationCode, String destinationLocationCode, Long operatingCompanyid,
+			LocalDateTime startDateAndTime, LocalDateTime endDateAndTime, String otherDetails, Long idRiverCruise, String nameOfTheBoat, String portOfRegistration) {
+		super( idJourney, originLocationCode, destinationLocationCode, operatingCompanyid, startDateAndTime, endDateAndTime, otherDetails);
 		this.idRiverCruise = idRiverCruise;
 		this.nameOfTheBoat = nameOfTheBoat;
 		this.portOfRegistration = portOfRegistration;

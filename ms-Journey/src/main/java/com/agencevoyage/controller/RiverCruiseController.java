@@ -27,20 +27,20 @@ public class RiverCruiseController {
 	@Autowired
 	IRiverCruiseService RiverCruiseService;
 	
-	@GetMapping("/RiverCruises")
+	@GetMapping("/riverCruises")
 	public List<RiverCruiseDTO> findAll(){
 		return (List<RiverCruiseDTO>)RiverCruiseService.getRiverCruises().stream().map(e->
 		RiverCruiseMapper.convertToRiverCruiseDTO(e)).collect(Collectors.toList());
 				
 	}
 	
-	@GetMapping("/RiverCruises/{id}")
+	@GetMapping("/riverCruises/{id}")
 	public RiverCruiseDTO findOne(@PathVariable("id") Long id) {
 		return RiverCruiseMapper.convertToRiverCruiseDTO(RiverCruiseService.getRiverCruise(id));
 		
 	}
 	
-	@PostMapping("/RiverCruises")
+	@PostMapping("/riverCruises")
 	public RiverCruiseDTO saveRiverCruise(@RequestBody RiverCruise RiverCruise) {
 		return RiverCruiseMapper.convertToRiverCruiseDTO(RiverCruiseService.saveRiverCruise(RiverCruise));
 	}
@@ -54,7 +54,7 @@ public class RiverCruiseController {
 //		return RiverCruiseMapper.convertToRiverCruiseDTO(RiverCruiseService.saveRiverCruise(currentRiverCruise));
 //	}
 	
-	@DeleteMapping("/RiverCruises/{id}")
+	@DeleteMapping("/riverCruises/{id}")
 	public void deleteRiverCruise(@PathVariable("id") Long id) {
 		RiverCruiseService.deleteRiverCruise(id);
 
